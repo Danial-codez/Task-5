@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div>
+            <h1>Student Task Manager</h1>
+            <p>Organize your studies, assignments and goals.</p>
+        </div>
+        <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+    </header>
+
+    <main class="container">
+
+        <!-- Dashboard Statistics -->
+        <section class="stats">
+            <div class="stat-card">
+                <h3>Total Tasks</h3>
+                <p id="totalTasks">0</p>
+            </div>
+
+            <div class="stat-card completed-card">
+                <h3>Completed</h3>
+                <p id="completedTasks">0</p>
+            </div>
+
+            <div class="stat-card pending-card">
+                <h3>Pending</h3>
+                <p id="pendingTasks">0</p>
+            </div>
+        </section>
+
+        <!-- Add Task Form -->
+        <section class="form-section">
+            <h2 id="formTitle">Add New Task</h2>
+
+            <form id="taskForm">
+
+                <input type="text" id="taskName"
+                    placeholder="Enter task name..." required>
+
+                <select id="category">
+                    <option value="Homework">Homework</option>
+                    <option value="Assignment">Assignment</option>
+                    <option value="Exam">Exam</option>
+                    <option value="Personal">Personal</option>
+                </select>
+
+                <select id="priority">
+                    <option value="Low">Low Priority</option>
+                    <option value="Medium" selected>Medium Priority</option>
+                    <option value="High">High Priority</option>
+                </select>
+
+                <input type="date" id="dueDate" required>
+
+                <button type="submit" id="submitBtn">Add Task</button>
+                <button type="button" id="cancelEdit" hidden>Cancel</button>
+
+            </form>
+        </section>
+
+        <!-- Search and Filters -->
+        <section class="controls">
+
+            <input type="text" id="searchInput"
+                placeholder="Search tasks by name...">
+
+            <select id="statusFilter">
+                <option value="All">All Tasks</option>
+                <option value="Completed">Completed</option>
+                <option value="Pending">Pending</option>
+            </select>
+
+            <select id="categoryFilter">
+                <option value="All">All Categories</option>
+                <option value="Homework">Homework</option>
+                <option value="Assignment">Assignment</option>
+                <option value="Exam">Exam</option>
+                <option value="Personal">Personal</option>
+            </select>
+
+            <select id="sortTasks">
+                <option value="default">Default Order</option>
+                <option value="date">Sort by Due Date</option>
+                <option value="priority">Sort by Priority</option>
+            </select>
+
+        </section>
+
+        <!-- Task List -->
+        <section class="tasks-section">
+            <h2>My Tasks</h2>
+            <p class="drag-hint">Drag tasks to change their order when using Default Order.</p>
+            <div id="taskList"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Task Manager | Stay Organized, Stay Productive.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
